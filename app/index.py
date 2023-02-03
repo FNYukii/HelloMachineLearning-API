@@ -18,11 +18,11 @@ def process_image(file):
   	return img3
 
 @hug.get("/")
-def api_root():
+def api_root(cors: hug.directives.cors="*"):
     return "Development of Web API!"
 
 @hug.post("/image-classifier")
-def api_image_classifier(file):
+def api_image_classifier(file, cors: hug.directives.cors="*"):
 
     # モデルを作成
     model = keras.models.load_model("ImageClassifierModel.h5")
