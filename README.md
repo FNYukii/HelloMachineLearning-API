@@ -12,9 +12,9 @@ HelloMachineLearningのAPIサーバー
 ### サーバーの用意(EC2を使う場合)
 1. Amazon EC2でインスタンスを用意
 2. インスタンスのインバウンドルールを編集
-3. `/api`フォルダをEC2インスタンスへアップロード
+3. プロジェクトフォルダをEC2インスタンスへアップロード
     ```
-    $ scp -r -i kkk.pem api/ ec2-user@xx.xxx.xx.xxx:/home/ec2-user/api/
+    $ scp -r -i kkk.pem HelloMachineLearning-API/ ec2-user@xx.xxx.xx.xxx:/home/ec2-user/HelloMachineLearning-API/
     ```
 4. EC2インスタンスへ接続
     ```
@@ -28,13 +28,13 @@ HelloMachineLearningのAPIサーバー
 ### hugサーバー起動
 1. Dockerイメージを作成
     ```
-    $ cd api/
+    $ cd HelloMachineLearning-API/
     $ sudo docker build --tag hello_machine_learning_api .
     ```
 2. Dockerコンテナを起動
     ```
     $ pwd
-    /home/ec2-user/api
+    /home/ec2-user/HelloMachineLearning-API
 
     $ sudo docker run -it --rm -p 8000:8000 -v $(pwd)/app:/app hello_machine_learning_api
     ```
