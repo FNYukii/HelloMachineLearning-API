@@ -19,7 +19,7 @@ def process_image(file):
 
 @hug.get("/")
 def api_root(cors: hug.directives.cors="*"):
-	return "Development of Web API!"
+	return "Hello Machine Learning!"
 
 @hug.post("/image-classifier")
 def api_image_classifier(file, cors: hug.directives.cors="*"):
