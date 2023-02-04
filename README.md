@@ -26,12 +26,16 @@ HelloMachineLearningのAPIサーバー
     ```
 
 ### hugサーバー起動
-1. Dockerイメージを作成
+1. Dockerを起動
+		```
+		$ sudo systemctl start docker
+		```
+2. Dockerイメージを作成
     ```
     $ cd HelloMachineLearning-API/
     $ sudo docker build --tag hello_machine_learning_api .
     ```
-2. Dockerコンテナを起動
+3. Dockerコンテナを起動
     ```
     $ pwd
     /home/ec2-user/HelloMachineLearning-API
